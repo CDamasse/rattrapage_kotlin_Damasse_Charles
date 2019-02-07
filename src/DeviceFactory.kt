@@ -1,0 +1,5 @@
+class DeviceFactory {
+    companion object {
+
+    }
+}
