@@ -12,8 +12,8 @@ class Device(
     var impression: Int,
     var clics: Int,
     var couts: String,
-    var PM: Int,
-    var CA: Int,
+    var PM: String,
+    var CA: String,
     var reseau: String,
     var mois: String
 ):DeviceInterface {

@@ -39,8 +39,8 @@ fun main() {
                     Integer.parseInt(tokens[impression]),
                     Integer.parseInt(tokens[clics]),
                     tokens[cout],
-                    Integer.parseInt(tokens[PM]),
-                    Integer.parseInt(tokens[CA]),
+                    tokens[PM],
+                    tokens[CA],
                     tokens[reseau],
                     tokens[mois]
                 )
