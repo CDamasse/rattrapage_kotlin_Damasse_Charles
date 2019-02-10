@@ -1,22 +1,21 @@
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
-import java.math.BigInteger
-import java.text.DecimalFormat
+import java.time.format.DecimalStyle
 import java.util.ArrayList
 
-val annee = 0
-val appareil = 0
-val commande = 0
-val impression = 0
-val clics = 0
-val cout = 0
-val PM = 0
-val CA = 0
-val reseau = 0
-val mois = 0
+private const val annee = 0
+private const val appareil = 1
+private const val commande = 2
+private const val impression = 3
+private const val clics = 4
+private const val cout = 5
+private const val PM = 6
+private const val CA = 7
+private const val reseau = 8
+private const val mois = 9
 
-fun main(args: Array<String>?) {
+fun main() {
     var fileReader: BufferedReader? = null
 
     try {
@@ -31,18 +30,18 @@ fun main(args: Array<String>?) {
         // Read the file line by line starting from the second line
         line = fileReader.readLine()
         while (line != null) {
-            val tokens = line.split(",")
+            val tokens = line.split(";")
             if (tokens.isNotEmpty()) {
                 val customer = Device(
-                    Integer.parseInt(tokens[annee]),
+                    tokens[annee],
                     tokens[appareil],
-                    Integer.parseInt(tokens[commande]),
+                    tokens[commande],
                     Integer.parseInt(tokens[impression]),
                     Integer.parseInt(tokens[clics]),
-                    Integer.parseInt(tokens[cout]),
+                    tokens[cout],
                     Integer.parseInt(tokens[PM]),
                     Integer.parseInt(tokens[CA]),
-                    Integer.parseInt(tokens[reseau]),
+                    tokens[reseau],
                     tokens[mois]
                 )
                 customers.add(customer)
@@ -52,7 +51,7 @@ fun main(args: Array<String>?) {
         }
 
         // Print the new customer list
-        for (i: Device in customers) {
+        for (i in customers) {
             println(i)
         }
 
