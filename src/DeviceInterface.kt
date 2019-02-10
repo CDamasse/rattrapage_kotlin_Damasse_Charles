@@ -1,4 +1,4 @@
 interface DeviceInterface {
-    //override fun toString(): String
-    fun returnDevice(): Array<Any?>
+    //fun toString(value: String): String
+    fun returnDevice(value: Array<Any>): Array<Any>
 }

@@ -1,19 +1,20 @@
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
+import java.math.BigInteger
 import java.text.DecimalFormat
 import java.util.ArrayList
 
 val annee = 0
-val appareil = 1
-val commande = 2
-val impression = 3
-val clics = 4
-val cout = 5
-val PM = 6
-val CA = 7
-val reseau = 8
-val mois = 9
+val appareil = 0
+val commande = 0
+val impression = 0
+val clics = 0
+val cout = 0
+val PM = 0
+val CA = 0
+val reseau = 0
+val mois = 0
 
 fun main(args: Array<String>?) {
     var fileReader: BufferedReader? = null
@@ -49,10 +50,12 @@ fun main(args: Array<String>?) {
 
             line = fileReader.readLine()
         }
+
         // Print the new customer list
-        for (customer in customers) {
-            println(customers)
+        for (i: Device in customers) {
+            println(i)
         }
+
     } catch (e: Exception) {
         println("Reading CSV Error!")
         e.printStackTrace()
